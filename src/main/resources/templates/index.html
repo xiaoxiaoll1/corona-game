@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<meta charset="UTF-8" />
+<meta name=viewport content="width=device-width, initial-scale=1">
+    <style>
+    </style>
+<title>ProtectCommunity</title>
+    <script type="text/javascript" th:inline="javascript">
+        var listInJson=[[${listInJson}]];
+        console.log(listInJson);
+    </script>
+    <script src="js/jquery-3.4.1.js"></script>
+<script src="lib/phaser.js"></script>
+<script src="js/Main.js"></script>
+<script src="assets/canvas/Level.js"></script>
+
+<style>
+body {
+	background: black;
+	margin: 0;
+	padding: 0;
+}
+</style>
+
+</head>
+<body class="body">
+<form id="formData" th:action="@{/gameOver}" method="post">
+    <input type="hidden" name="listName" id="listName" th:value="${listName}">
+    <input  type="hidden" name="playerName"  id="playerName"/>
+    <input type="hidden" name="playerScore" id="playerScore"/>
+    <input type="hidden" name="winOrLose" id="winOrLose" />
+    <input type="hidden" name="passTime" id="passTime"/>
+    <input type="hidden" name="passTimeString" id="passTimeString"/>
+    <input type="hidden" name="next" id="next"/>
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+spring:
+  thymeleaf:
+    cache: false
+  datasource:
+#    username: root
+#    password: 1234
+    username: root
+    password: 1234
+    url: jdbc:mysql://localhost:3306/protect_my_community?serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    filter: stat,wall
+  redis:
+    database: 0
+    host: 192.168.47.27
+    port: 6379

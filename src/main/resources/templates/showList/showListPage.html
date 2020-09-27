@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <audio th:src="@{/music/WindFromFarEast.mp3}" preload="auto" controls></audio>
+    <script th:src="@{/js/audioplayer.js}"></script>
+    <script th:src="@{/js/jquery-3.4.1.js}"></script>
+    <script>
+        $( function()
+        {
+            $( 'audio' ).audioPlayer();
+        });
+    </script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+    <script type="text/javascript">
+        function check()
+        {
+            var listName=document.getElementById("wname").value;
+            var listAuthor=document.getElementById("wauthor").value;
+            console.log(listName);
+            console.log(listAuthor);
+            if(listName=='' || listAuthor==''){
+                alert('List name and author name can not be empty');
+                return false;
+            }
+            var nameArr=document.getElementsByClassName('listNames');
+            for(var i=0; i<nameArr.length; i++){
+                if(nameArr[i].textContent==listName){
+                    alert('The name is already existed, please change another one!');
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+
+</head>
+<body>
+<table class="imagetable">
+    <thead>
+    <tr>
+        <th>List Name</th>
+        <th>List Author</th>
+        <th>operation</th >
+    </tr>
+    </thead>
+    <tbody>
+    <tr  th:each="wordlistEntry: ${wordListNames}">
+        <td class="listNames" th:text="${wordlistEntry.getWname()}"/>
+        <td th:text="${wordlistEntry.getWauthor()}"/>
+        <td>
+            <a class="btn btn-sm btn-primary" th:href="@{/showListPage/}+${wordlistEntry.getWname()}">Check</a>
+            <a class="btn btn-sm btn-danger" onclick="if(confirm('Are you sure you want to delete?')==false) return false" th:href="@{/showListPage/deleteList/}+${wordlistEntry.getWname()}">Delete</a>
+        </td>
+    </tr>
+    <tr>
+        <form th:action="@{/showListPage/addNewList}" method="post" >
+            <td>
+            <input type="text" id="wname" name="wname"/>
+            </td>
+            <td>
+            <input type="text" id="wauthor" name="wauthor">
+            </td>
+            <td>
+            <input type="submit" class="tl-price-input" value="Add" onclick="return check()">
+            </td>
+        </form>
+    </tr>
+    <tr>
+        <td colspan="3"><a class="btn btn-sm btn-primary" th:href="@{/hello}">Return</a></td>
+    </tr>
+    </tbody>
+</table>
+
+
+
+</body>
+</html>

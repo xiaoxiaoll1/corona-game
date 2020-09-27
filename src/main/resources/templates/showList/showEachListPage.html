@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <audio th:src="@{/music/WindFromFarEast.mp3}" preload="auto" controls></audio>
+    <script th:src="@{/js/audioplayer.js}"></script>
+    <script th:src="@{/js/jquery-3.4.1.js}"></script>
+    <script>
+        $( function()
+        {
+            $( 'audio' ).audioPlayer();
+        });
+    </script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+
+</head>
+<body>
+<table class="imagetable">
+    <thead>
+    <tr>
+        <th>Word</th>
+        <th>Hyphenated word</th>
+        <th>operation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="wordEntry: ${wordList}">
+        <td th:text="${wordEntry.getWord()}"/>
+        <td th:text="${wordEntry.getHword()}"/>
+        <td>
+            <a class="btn btn-sm btn-primary" th:href="@{/showListPage/update/}+${wordEntry.getWid()}">Update</a>
+            <a class="btn btn-sm btn-danger" th:href="@{/showListPage/delete/}+${wordEntry.getWid()}">Delete</a>
+        </td>
+    </tr>
+    <tr>
+    <form th:action="@{/showListPage/wordAction}" method="post">
+        <input type="hidden" name="wordListName" id="wordListName" th:value="${title}">
+        <td>
+            <input type="text"  id="word" name="word"/>
+        </td>
+        <td>
+            <input type="text" id="hword" name="hword"/>
+        </td>
+
+        <td>
+            <input type="submit" class="tl-price-input" value="Add">
+        </td>
+    </form>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <a class="btn btn-sm btn-primary" th:href="@{/hello}">Main Page</a> &nbsp; &nbsp;
+            <a class="btn btn-sm btn-primary" th:href="@{/showWordList}">Return</a>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

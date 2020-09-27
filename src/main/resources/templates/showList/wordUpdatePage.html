@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Word Update Page</title>
+	<audio th:src="@{/music/WindFromFarEast.mp3}" preload="auto" controls></audio>
+	<script th:src="@{/js/audioplayer.js}"></script>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	<script>
+		$( function()
+		{
+			$( 'audio' ).audioPlayer();
+		});
+	</script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+	<table class="imagetable">
+		<form th:action="@{/showListPage/update/}+${hyphenatedWord.getWid()}" method="post">
+			<input type="hidden" id="wordListName" name="wordListName" th:value="${hyphenatedWord.getWordListName()}">
+			<tr >
+				<td>Word:</td>
+				<td><input type="text" id="word" name="word" th:value="${hyphenatedWord.getWord()}"></td>
+			</tr>
+			<tr >
+				<td>Hyphenated word: </td>
+				<td><input type="text" id="hword" name="hword" th:value="${hyphenatedWord.getHword()}"></td>
+			</tr>
+			<tr >
+				<td>operation</td>
+				<td>
+					<input type="hidden" name="wid" id="wid" th:value="${hyphenatedWord.getWid()}">
+					<button class="tl-price-input" type="submit">Update</button>
+				</td>
+			</tr>
+			<tr>
+				<td><a class="btn btn-sm btn-primary" th:href="@{/hello}">MainPage</a></td>
+				<td><a class="btn btn-sm btn-primary" th:href="@{/showListPage/ }+${wordListName}">Return</a></td>
+			</tr>
+		</form>
+	</table>
+</body>
+</html>

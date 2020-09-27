@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking List</title>
+    <audio th:src="@{/music/WindFromFarEast.mp3}" preload="auto" controls></audio>
+    <script th:src="@{/js/audioplayer.js}"></script>
+    <script th:src="@{/js/jquery-3.4.1.js}"></script>
+    <script>
+        $( function()
+        {
+            $( 'audio' ).audioPlayer();
+        });
+    </script>
+    <STYLE>
+        table {
+            border: 1px solid gray;
+        }
+        th,td,tr{
+                border:1px solid gray;
+        }
+    </STYLE>
+    <script type="text/javascript">
+        var num=0;
+    </script>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<table class="imagetable">
+    <caption th:text="${listName}" align="center" style="font-size: 50px; font-family: 'STXinwei'; " />
+	<thead>
+    <tr>
+        <th>Rank</th>
+        <th>Player Name</th>
+        <th>Score</th>
+        <th>Pass Time</th>
+        <th>Play time</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="temp: ${rankingListEntries}">
+        <td th:text="${rankNumber.pop()}">1</td>
+        <td th:text="${temp.getPlayerName()}"/>
+        <td th:text="${temp.getScore()}"/>
+        <td th:text="${temp.getPassTimeString()}"/>
+        <td th:text="${temp.getTime()}"/>
+    </tr>
+    <tr>
+        <td colspan="5"><a class="btn btn-sm btn-primary" th:href="@{/hello}">Return</a></td>
+    </tr>
+    <br/>
+    </tbody>
+ </table>
+</body>
+</html>

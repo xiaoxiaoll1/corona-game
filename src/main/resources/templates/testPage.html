@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Protect My Community</title>
+	<script th:src="@{/js/audioplayer.js}"></script>
+	<script th:src="@{/js/jquery-3.4.1.js}"></script>
+	<!--BGM Src:Wind from far east by ESTi
+		Src:http://chd.sdo.com/web7/download/music.asp -->
+	<audio th:src="@{/music/WindFromFarEast.mp3}" preload="auto" controls autoplay loop></audio>
+
+	<script>
+		$( function()
+		{
+			$( 'audio' ).audioPlayer();
+		});
+	</script>
+    <style th:inline="text">
+		body{
+			background-image: url("/images/bg.jpg");
+		}
+		.box{
+			margin-top: 200px;
+		}
+        .center {
+            display: flex;
+            justify-content: center;
+			
+        }
+
+        .center button {
+            width: 300px;
+            height: 50px;
+            font-size: 16px;
+            text-align: center;
+            padding: 5px 10px;
+            border: none;
+            outline: none;
+			color: #fff;
+			background-color: #67c23a;
+			border-color: #67c23a;
+        }
+
+        .center select {
+            width: 300px;
+            maragin-left: 30px;
+        }
+
+        .center select option {
+            height: 50px;
+        }
+
+
+        .center:nth-child(2) button, .center:nth-child(2) button {
+            margin-right: 30px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<!--   <a th:href="@{/showWordList}">WordList</a><br/>-->
+<div class="box">
+	<form th:action="@{/showWordList}" class="center">
+	    <button type="submit">WordList</button>
+	</form><br/>
+	<form th:action="@{/startGame}" class="center">
+	    <button type="submit" value="Start Game!">Start Game!</button>
+	    <select id="selection" name="listName">
+	        <option name="nameSelection" value="default">--Select a List--</option>
+	        <option name="nameSelection" th:each="name:${names}" th:value="${name.getWname()}" th:text="${name.getWname()}"></option>
+		</select>
+		<br/>
+	</form>
+	<br/>
+		<p th:text="${msgGame}" th:if=" not ${#strings.isEmpty(msgGame)}" align="center" style="color: rgb(255,251,15);font-size: 30px "></p>
+	<form th:action="@{/rankingList}" class="center">
+	    <button type="submit">Ranking List</button>
+	    <select  name="rankingListName">
+	        <option name="rankNameSelection" value="default">--Select a List--</option>
+	        <option name="rankNameSelection" th:each="name:${rankingListNames}" th:value="${name}" th:text="${name}"></option>
+	    </select>
+		<br/>
+	</form>
+	<br/>
+	<p th:text="${msg}" th:if=" not ${#strings.isEmpty(msg)}" align="center" style="color: rgb(255,251,15); font-size: 30px"></p>
+</div>
+</body>
+</html>
