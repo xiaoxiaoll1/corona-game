@@ -20,7 +20,7 @@ import java.util.Collection;
 public interface RankingListMapper {
 
     /**
-     * Getting the a list by list name, the result will be stored in a collection.
+     * Getting the a list by  list name, the result will be stored in a collection.
      * @param listName
      * @return the collection which store the entries of ranking list.
      */
