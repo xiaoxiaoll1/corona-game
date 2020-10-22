@@ -12,5 +12,5 @@ spring:
     filter: stat,wall
   redis:
     database: 0
-    host: 192.168.47.27
+    host: 127.0.0.1
     port: 6379
