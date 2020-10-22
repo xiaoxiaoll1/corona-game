@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 #About
 
 This software is designed to manage media collection.
