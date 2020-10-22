@@ -30,9 +30,9 @@ After you run the project locally, you can open your browser and input the websi
 
 ## ScreenShot of the game
 
-https://i.ibb.co/RPmwx2G/game.png
 
 
+![](https://i.ibb.co/RPmwx2G/game.png)
 
 ##Author
 * ##### Xiao Zijian -[See more at github](https://github.com/xiaoxiaoll1)
