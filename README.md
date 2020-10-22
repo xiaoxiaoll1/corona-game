@@ -28,6 +28,12 @@ mvn spring-boot:run
 ##Enter the project
 After you run the project locally, you can open your browser and input the website http://localhost:8080 to enter the main page of the application.
 
+## ScreenShot of the game
+
+https://i.ibb.co/RPmwx2G/game.png
+
+
+
 ##Author
 * ##### Xiao Zijian -[See more at github](https://github.com/xiaoxiaoll1)
 
