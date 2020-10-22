@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #About
 
 This software is designed to manage media collection.
@@ -13,7 +14,7 @@ This software is designed to manage media collection.
 
 
 ##Author
-
 * ##### Xiao Zijian -[See more at github](
 
-###End
+###
+
