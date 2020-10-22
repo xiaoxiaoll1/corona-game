@@ -18,7 +18,7 @@ Before running the application locally, several steps need to be followed：
 3.Import the maven dependencies at pom.xml (You can use auto-import if you use IDEA to open the project)
 
 4.There are several ways to run a Spring Boot application on your local machine. One way is to execute the `main` method in the 'com.xiaozijian.protectmycommunity.ProtectmycommunityApplication' class from your IDE.
-  
+
   Alternatively you can use the [Spring Boot Maven plugin](https://docs.spring.io/spring-boot/docs/current/reference/html/build-tool-plugins-maven-plugin.html) like so:
 
 ```shell
@@ -29,4 +29,5 @@ mvn spring-boot:run
 After you run the project locally, you can open your browser and input the website http://localhost:8080 to enter the main page of the application.
 
 ##Author
-* **Qiu Mengke** -[See more at github](https://github.com/epicure1998)
+* ##### Xiao Zijian -[See more at github](https://github.com/xiaoxiaoll1)
+
