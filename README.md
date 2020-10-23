@@ -17,11 +17,15 @@ The game aims to help people learn English and remember the pain of the epidemic
 
 The developers who want to run the game should know something about the technology below:
 
-[Idea]: https://www.jetbrains.com/idea/	"Idea"
-[Docker]: https://www.docker.com/	"Docker"
-[Mysql ]: https://www.mysql.com/	"Mysql"
-[Redis]: https://redis.io/	"Redis"
-[Springboot]: https://spring.io/projects/spring-boot	"Springboot"
+[Idea](https://www.jetbrains.com/idea/ )
+
+[Docker](https://www.docker.com/)
+
+[Mysql](https://www.mysql.com/)
+
+[Redis](https://redis.io/ )
+
+[Springboot](https://spring.io/projects/spring-boot Springboot)
 
 
 
