@@ -1,11 +1,11 @@
 
-#About
+# About
 
 The game aims to help people learn English and remember the pain of the epidemic.
 
 
 
-#Quick Start
+# Quick Start
 
 -The game is an anti epidemic theme game, users can input the syllables of words to eliminate the virus.
 
@@ -31,7 +31,7 @@ The developers who want to run the game should know something about the technolo
 
 
 
-##Author
+## Author
 * ##### Xiao Zijian -[See more at github]
 
   
